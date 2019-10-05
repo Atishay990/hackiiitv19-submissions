@@ -14,9 +14,9 @@ class Grain(models.Model):
 class farmer(models.Model):
     GrainName = models.CharField(max_length=100)
     GrainType = models.CharField(max_length=100)
-
+    GrainImage = models.ImageField(default='None',upload_to='images/')
     GrainPrice = models.CharField(max_length=100)
-    
+
 
     def __str__(self):
         return '%s %s %s' % (self.GrainName,self.GrainType,self.GrainPrice)
