@@ -12,10 +12,11 @@ class Grain(models.Model):
         return self.grain_name
 
 class farmer(models.Model):
-    grain = models.CharField(max_length=100)
-    type = models.CharField(max_length=100)
-    date = models.DateField(default='2019-10-05')
-    price = models.CharField(max_length=100)
-    image = models.ImageField(default='None',upload_to='images/')
+    GrainName = models.CharField(max_length=100)
+    GrainType = models.CharField(max_length=100)
 
-     
+    GrainPrice = models.CharField(max_length=100)
+    
+
+    def __str__(self):
+        return '%s %s %s' % (self.GrainName,self.GrainType,self.GrainPrice)

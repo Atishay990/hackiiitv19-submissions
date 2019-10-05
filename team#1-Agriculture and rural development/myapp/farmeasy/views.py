@@ -13,4 +13,16 @@ def grains(request):
     return render(request, 'farmeasy/market.html', context)
 
 def farm(request):
-    return render(request,'farmeasy/market2.html')
+    if request.method == 'POST':
+        post = Post()
+        post.GrainName = request.POST.get('GrainName')
+        post.GrainType = request.POST.get('GrainType')
+        post.GrainPrice = request.POST.get('GrainPrice')
+        post.save()
+        return render(request , 'farmeasy/market.html'
+    else:
+        return render(request, 'farmeasy/market2.html')
+
+
+
+    return render(request,'farmeasy/market1.html')
