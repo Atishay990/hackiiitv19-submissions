@@ -6,7 +6,7 @@ from django.conf import settings
 
 urlpatterns= [
 path('',(views.index), name='index'),
-path('market.html',(view.grains),name='market')
+path('market.html',(views.grains),name='market')
 ]
 urlpatterns += static((settings.STATIC_URL), document_root=(settings.STATIC_ROOT))
 urlpatterns += staticfiles_urlpatterns()

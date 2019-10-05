@@ -8,6 +8,6 @@ def index (request):
 
 
 def grains(request):
-    latest_release = Grain.objects.order_by('-release_date')
+    latest_release = Grain.objects.order_by('grain_date')
     context = {'latest_release': latest_release}
-    return render(request, 'bowl/market.html', context)
+    return render(request, 'farmeasy/market.html', context)
