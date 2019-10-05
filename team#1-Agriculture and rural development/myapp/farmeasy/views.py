@@ -11,3 +11,6 @@ def grains(request):
     latest_release = Grain.objects.order_by('grain_date')
     context = {'latest_release': latest_release}
     return render(request, 'farmeasy/market.html', context)
+
+def farm(request):
+    return render(request,'farmeasy/market2.html')
